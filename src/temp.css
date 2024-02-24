@@ -15,3 +15,29 @@
     color: #000;
     border-radius: 0.5rem;
 }
+
+.main {
+    margin-left:208px ;
+    background-color: #272727;
+}
+
+.row1-balance,.row1-budget,.row1-expense{
+    padding-right: 144px;
+    padding-left: 24px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-radius: 1.5rem;
+}
+
+.row1-budget{
+    background-color: #E8F167;
+    
+}
+
+.row1-balance {
+    background-color: #8BF167;
+}
+
+.row1-expense{
+    background-color: #1DAFA6;
+}
