@@ -2,6 +2,11 @@
     border: 2px solid red;
 } */
 
+*{
+    margin: 0;
+    padding: 0;
+}
+
 .sidebar{
     background-color: #303131;
 }
@@ -19,6 +24,14 @@
 .main {
     margin-left:208px ;
     background-color: #272727;
+}
+
+.m-body-center{
+    flex-grow: 7.8;
+}
+
+.m-body-right{
+    flex-grow: 2.2;
 }
 
 .row1-balance,.row1-budget,.row1-expense{
@@ -41,3 +54,20 @@
 .row1-expense{
     background-color: #1DAFA6;
 }
+
+.m-body-right{
+    background-color: #303131;
+}
+
+.row2-chart-container{
+    position: relative;
+    background-color: #303131;
+    border-radius: 1rem;
+}
+
+#row2-chart{
+    width: 100%;
+    max-height: 16rem;
+    width: 100%;
+}
+

@@ -35,7 +35,7 @@
         </div>
 
         <div class="main-body flex">
-            <div class="m-body-center flex-1 p-4">
+            <div class="m-body-center flex-1 p-8">
                 <div class="m-b-c-row1 flex py-4 justify-between">
                     <div class="row1-budget rounded-lg">
                         <div class="row1-budget-text text-lg">
@@ -68,19 +68,38 @@
 
 
                 <div class="m-b-c-row2">
-                    row2
+                    <div class="row2-header">
+                        header
+                    </div>
+                    <div class="row2-chart-container p-7">
+                        <canvas id="row2-chart"></canvas>
+                    </div>
                 </div>
                 <div class="m-b-c-row3">
                     row3
                 </div>
             </div>
 
-            <div class="m-body-right ">
-                right 
+            <div class="m-body-right card">
+                <div class="m-b-r-top card">
+                    <div class="card-header flex">
+                        <div class="card-amount">
+                            Rs 0000
+                        </div>
+                        <div class="card-logo">
+                            VISA
+                        </div>
+                    </div>
+                </div>
+                <div class="m-b-r-bottom">
+                    bottom
+                </div>
             </div>
         </div>
     </div>
     
 </body>
 <script src="https://kit.fontawesome.com/0010a0ae9f.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script src="./centerchart.js"></script>
 </html>
