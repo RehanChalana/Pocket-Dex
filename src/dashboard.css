@@ -64,3 +64,7 @@
     background-image: linear-gradient(to bottom right,#E8F167,#8BF167,#1DAFA6);
 }
 
+.row3-history{
+    flex-grow: 5;
+}
+
