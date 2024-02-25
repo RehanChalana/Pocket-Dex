@@ -5,11 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>side-bar</title>
     <link href="./output.css" rel="stylesheet">
-    <link href="./temp.css" rel="stylesheet">
+    <link href="./sidebar.css" rel="stylesheet">
+    <link href="./dashboard.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     
 </head>
 <body>
-    <div class="sidebar w-52 h-full flex flex-col fixed justify-between font-sans text-gray-300 text-base p-6">
+    <div class="sidebar w-56 h-full flex flex-col fixed justify-between font-sans text-gray-300 text-base p-6">
         <div class="sidebar-top">
             <div class="s-top-logo"><div class="sidebar-header flex items-center gap-1 mb-8 rounded-full py-4 text-2xl font-semibold"><i class="fa-solid fa-prescription fa-lg"></i>Pocket-Dex</div></div>
             <div class="home px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-house fa-lg"></i>Home</div>
@@ -25,19 +29,22 @@
     </div>
 
     <div class="main">
-        <div class="main-header flex justify-between w-full">
+        <div class="main-header flex justify-between pl-8 pt-6">
             <div class="m-header-l">
-                left
+                <div class="m-h-l-searchbar pl-6 pr-72 py-2 rounded-2xl text-gray-300">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </div>
             </div>
-            <div class="m-header-r">
-                right
+            <div class="m-header-r pr-14 text-gray-300">
+                <i class="fa-solid fa-bell fa-rotate-by fa-xl" style="--fa-rotate-angle: 40deg;""></i>
             </div>
         </div>
 
         <div class="main-body flex">
-            <div class="m-body-center flex-1 p-8">
+            <div class="m-body-center flex-col  py-8 pl-8">
                 <div class="m-b-c-row1 flex py-4 justify-between">
-                    <div class="row1-budget rounded-lg">
+                    <div class="row1-budget rounded-3xl py-8 pl-8 pr-32 ">
                         <div class="row1-budget-text text-lg">
                             Budget
                         </div>
@@ -46,8 +53,8 @@
                         </div>
                     </div>
                     
-                    <div class="row1-balance">
-                        <div class="row1-balance-text text-lg">
+                    <div class="row1-balance py-8 pl-8 pr-32 rounded-3xl">
+                        <div class="row1-balance-text text-lg ">
                             Balance
                         </div>
                         <div class="row1-balance-amount text-2xl font-semibold">
@@ -55,7 +62,7 @@
                         </div>
                     </div>
 
-                    <div class="row1-expense">
+                    <div class="row1-expense py-8 pl-8 pr-32 rounded-3xl">
                         <div class="row1-expense-text text-lg">
                             Expense
                         </div>
@@ -67,32 +74,131 @@
                 </div>
 
 
-                <div class="m-b-c-row2">
-                    <div class="row2-header">
-                        header
-                    </div>
+                <div class="m-b-c-row2 w-full">
                     <div class="row2-chart-container p-7">
+                        <div class="row2-header text-gray-300 text-xl font-semibold">
+                            Total balance
+                        </div>
                         <canvas id="row2-chart"></canvas>
                     </div>
                 </div>
-                <div class="m-b-c-row3">
-                    row3
+
+
+                <div class="m-b-c-row3 flex">
+                    <div class="row3-history p-6 ">
+                        <div class="row3-h-header text-2xl font-semibold text-gray-300 mb-2">
+                            History
+                        </div>
+                        <div class="row3-h-list flex-col">
+                            <div class="row3-list-entry flex justify-between py-1">
+                                <div class="list-entry-left">
+                                    <div class="entry-name text-white font-semibold">
+                                        NAME
+                                    </div>
+
+                                    <div class="entry-date text-slate-300">
+                                        2023-1-10
+                                    </div>
+                                </div>
+
+                                <div class="list-entry-right">
+                                    <div class="entry-amount text-white font-semibold">
+                                        Rs 100
+                                    </div>
+
+                                    <div class="entry-category text-slate-300">
+                                        Category
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row3-list-entry flex justify-between py-1">
+                                <div class="list-entry-left">
+                                    <div class="entry-name text-white font-semibold">
+                                        NAME
+                                    </div>
+
+                                    <div class="entry-date text-slate-300">
+                                        2023-1-10
+                                    </div>
+                                </div>
+
+                                <div class="list-entry-right">
+                                    <div class="entry-amount text-white font-semibold">
+                                        Rs 100
+                                    </div>
+
+                                    <div class="entry-category text-slate-300">
+                                        Category
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row3-list-entry flex justify-between">
+                                <div class="list-entry-left">
+                                    <div class="entry-name text-white font-semibold">
+                                        NAME
+                                    </div>
+
+                                    <div class="entry-date text-slate-300">
+                                        2023-1-10
+                                    </div>
+                                </div>
+
+                                <div class="list-entry-right">
+                                    <div class="entry-amount text-white font-semibold">
+                                        Rs 100
+                                    </div>
+
+                                    <div class="entry-category text-slate-300">
+                                        Category
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row3-chart-container pt-6 px-6">
+                        <div class="row3-chart-header text-2xl text-gray-300 font-semibold mb-2">
+                            Statistics
+                        </div>
+                        <canvas id="row3-chart"></canvas>
+                    </div>
                 </div>
             </div>
 
-            <div class="m-body-right card">
-                <div class="m-b-r-top card">
-                    <div class="card-header flex">
-                        <div class="card-amount">
-                            Rs 0000
+            <div class="m-body-right py-8 px-10 flex flex-col gap-3">
+                <div class="m-b-r-top p-8 my-4">
+                    <div class="m-b-r-top-header text-gray-300 text-2xl font-semibold">
+                        My wallets
+                    </div>
+
+                    <div class="m-b-r-top-card flex flex-col gap-4 px-5 py-7 mt-3 rounded-2xl">
+                        <div class="card-header flex justify-between ">
+                            <div class="card-amount text-xl font-semibold">
+                                Rs 0000
+                            </div>
+                            <div class="card-logo text-2xl font-semibold">
+                                VISA
+                            </div>
                         </div>
-                        <div class="card-logo">
-                            VISA
+
+                        <div class="card-wallet-number text-2xl font-bold ">
+                            900000000                        
+                        </div>
+
+                        <div class="card-footer flex justify-between">
+                            <div class="card-holder-name text-lg font-semibold">Lorem</div>
+                            <div class="card-date text-xl font-semibold">2023-5-16</div>
                         </div>
                     </div>
+                    
                 </div>
-                <div class="m-b-r-bottom">
-                    bottom
+                <div class="m-b-r-bottom rounded-2xl">
+                    <div class="m-b-r-header p-6 text-gray-300 text-2xl font-semibold">all expenses</div>
+                    <div class="m-b-r-bottom-chart-container p-4">
+                        <canvas id="bottom-doughnut-chart"></canvas>
+                    </div>
                 </div>
             </div>
         </div>
@@ -102,4 +208,6 @@
 <script src="https://kit.fontawesome.com/0010a0ae9f.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 <script src="./centerchart.js"></script>
+<script src="./row3chart.js"></script>
+<script src="./doughnut-chart.js"></script>
 </html>
