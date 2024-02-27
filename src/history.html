@@ -27,8 +27,8 @@
         </div>
     </div>
 
-    <div class="main">
-        <div class="main-header flex justify-between pl-8 pt-6">
+    <div class="main px-8 pt-6 flex flex-col gap-4">
+        <div class="main-header flex justify-between ">
             <div class="m-header-l">
                 <div class="m-h-l-searchbar pl-6 pr-72 py-2 rounded-2xl text-gray-300">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -42,6 +42,32 @@
                 <i class="fa-solid fa-bell fa-rotate-by fa-xl" style="--fa-rotate-angle: 40deg;""></i>
             </div>
         </div>
+
+        <div class="main-date text-gray-300 font-semibold text-lg px-2 flex gap-2 items-center my-2">
+            <i class="fa-solid fa-calendar-days"></i> 2024-25-02
+        </div>
+
+        <div class="main-history-container p-3 rounded-xl">
+            <div class="m-h-c-header flex justify-between p-2">
+                <div class="m-h-c-header-left pl-6 pr-56 py-1 rounded-2xl text-gray-300 ml-28">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    Search
+                </div>
+
+                <div class="m-h-c-header-right flex gap-4">
+                    <div class="header-from flex gap-2 items-center">
+                        <div class="header-from-text text-gray-400 font-medium">From</div>
+                        <div class="header-from-date py-1 px-3 rounded-2xl text-gray-300">Nov 10,2023</div>
+                    </div>
+                    <div class="header-to flex gap-2 items-center">
+                        <div class="header-to-text text-gray-400 font-medium">To</div>
+                        <div class="header-to-date py-1 px-3 rounded-2xl text-gray-300">Nov 20,2023</div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+
     </div>
     
 </body>

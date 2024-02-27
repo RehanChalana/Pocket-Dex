@@ -4,6 +4,10 @@
     font-family: "Poppins";
 }
 
-.m-h-l-searchbar,.m-b-r-bottom{
+.m-h-l-searchbar,.m-b-r-bottom,.main-history-container{
     background-color: #303131;
+}
+
+.m-h-c-header-left,.header-from-date,.header-to-date{
+    background-color: #484a4a;
 }
