@@ -8,6 +8,10 @@
     background-color: #303131;
 }
 
-.m-h-c-header-left,.header-from-date,.header-to-date{
+.m-h-c-header-left,.header-from-date,.header-to-date,.history-list-entry{
     background-color: #484a4a;
+}
+
+.history-entry-check{
+    background-color: #E8F167;
 }
