@@ -43,11 +43,13 @@
             </div>
         </div>
 
+        
+
         <div class="main-date text-gray-300 font-semibold text-lg px-2 flex gap-2 items-center my-2">
             <i class="fa-solid fa-calendar-days"></i> 2024-25-02
         </div>
 
-        <div class="main-history-container p-3 rounded-xl">
+        <div class="main-history-container p-3 rounded-xl flex flex-col gap-5">
             <div class="m-h-c-header flex justify-between p-2">
                 <div class="m-h-c-header-left pl-6 pr-56 py-1 rounded-2xl text-gray-300 ml-28">
                     <i class="fa-solid fa-magnifying-glass"></i>
@@ -65,12 +67,23 @@
                     </div>
                 </div>
             </div>
+            <!-- history-sort -->
+            <div class="m-h-c-sort flex justify-end gap-5 px-2">
+                <div class="m-h-c-all text-gray-500">all</div>
+                <div class="m-h-c-recent text-gray-500">recent</div>
+                <div class="m-h-c-largest text-gray-300 font-semibold">largest</div>
+            </div>
 
             <!-- history-list -->
             <div class="history-list">
                 <!-- list headings -->
-                <div class="history-list-headings">
-
+                <div class="history-list-headings flex text-gray-400 pl-6 pr-10 justify-between">
+                    <div class="history-headings-icon"><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></div>
+                    <div class="history-headings-date min-w-12">Date <i class="fa-solid fa-chevron-down fa-xs"></i></div>
+                    <div class="history-headings-name ml-12">Name <i class="fa-solid fa-chevron-down fa-xs"></i></div>
+                    <div class="history-headings-wallet"> Wallet <i class="fa-solid fa-chevron-down fa-xs"></i></div>
+                    <div class="history-headings-amount">Amount <i class="fa-solid fa-chevron-down fa-xs"></i></div>
+                    <div class="history-headings-status">Status <i class="fa-solid fa-chevron-down fa-xs"></i></div>
                 </div>
                 <!-- list entries -->
                 <div class="history-list-entries flex flex-col gap-4 px-2 py-3">
