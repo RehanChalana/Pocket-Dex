@@ -222,11 +222,22 @@
             <div class="m-body-right py-8 px-10 flex flex-col gap-3 max-w-md">
                 <div class="m-b-r-top px-8 pt-6 pb-12 my-4">
                     <div class="m-b-r-top-header flex justify-between">
-                        <div class="m-b-r-top-h-left text-gray-300 text-xl font-semibold">My wallets</div>
+                        <div class="m-b-r-top-h-left text-gray-300 text-xl font-semibold">Transaction</div>
                         <div class="m-b-r-top-h-right text-sm text-gray-400 font-semibold"><i class="fa-solid fa-plus fa-sm"></i> Add a new one</div>
                     </div>
 
-                    <div class="m-b-r-top-card flex flex-col gap-4 mt-2 px-5 py-6 mt-3 rounded-2xl">
+                    <form class="m-b-r-top-form">
+                        <input class="m-b-r-top-form-amount" placeholder="Amount" type="number">
+                        <input class="m-b-r-top-form-title" placeholder="Title" type="text">
+                        <input class="m-b-r-top-form-date" placeholder="Date" type="date">
+                        <select class="m-b-r-top-form-category">
+                            <option>Category</option>
+                            <option>hello</option>
+                        </select>
+                        <button class="m-b-r-top-form-submit">Submit</button>
+                    </form>
+
+                    <!-- <div class="m-b-r-top-card flex flex-col gap-4 mt-2 px-5 py-6 mt-3 rounded-2xl">
                         <div class="card-header flex justify-between ">
                             <div class="card-amount text-lg font-semibold">
                                 Rs 0000
@@ -244,7 +255,7 @@
                             <div class="card-holder-name text-md font-semibold">Lorem</div>
                             <div class="card-date text-lg font-semibold">2023-5-16</div>
                         </div>
-                    </div>
+                    </div> -->
                     
                 </div>
                 <div class="m-b-r-bottom rounded-2xl">
@@ -266,4 +277,5 @@
 <script src="./centerchart.js"></script>
 <script src="./row3chart.js"></script>
 <script src="./doughnut-chart.js"></script>
+<script src="./dashboard.js"></script>
 </html>
