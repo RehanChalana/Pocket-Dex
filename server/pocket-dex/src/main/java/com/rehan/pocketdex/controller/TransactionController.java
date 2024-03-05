@@ -17,13 +17,13 @@ public class TransactionController {
         this.transactionRepository=transactionRepository;
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5501")
+//    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @PostMapping
     public void addTransaction(@RequestBody Transaction transaction) {
         transactionRepository.addTransaction(transaction);
     }
 
-    @CrossOrigin(origins = "http://127.0.0.1:5501")
+//    @CrossOrigin(origins = "http://127.0.0.1:5500")
     @GetMapping
     public List<Transaction> getAllTransactions(@RequestParam int user_id) {
         return transactionRepository.getAllTransaction(user_id);
