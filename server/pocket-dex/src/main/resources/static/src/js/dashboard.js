@@ -1,5 +1,23 @@
 
 
+// updating dashboard date 
+
+const currentDate = new Date();
+let curDay = currentDate.getDate();
+let curMonth = currentDate.getMonth() + 1; // Months are zero-based
+let curYear = currentDate.getFullYear();
+
+if(curDay<10) {
+  curDay = `0${curDay}`;
+}
+if(curMonth<10) {
+  curMonth = `0${curMonth}`
+}
+const mainBodyDateContainer = document.querySelector(".main-body-date-text");
+mainBodyDateContainer.innerHTML=`${curDay}-${curMonth}-${curYear}`;
+
+// updating dashboard
+
 async function getWallets() {
     return fetch("http://localhost:8080/getWallets")
     .then(response => {
@@ -29,31 +47,6 @@ getWallets().then(data => {
     balanceContainer.innerHTML = `Rs ${balance}`;
     expenseContainer.innerHTML = `Rs ${budget - balance}`;
 })
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
