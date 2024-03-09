@@ -4,15 +4,24 @@
     font-family: "Poppins";
 }
 
+input[type="text"], input[type="password"], textarea {
+    border: none !important;
+    outline: none !important;
+  }
+
+.m-body-center {
+    min-width: 900px;
+}
+
 .m-body-right{
-    flex-grow: 3;
+    flex-grow: 2;
 }
 
 .m-b-c-row1{
     gap:2rem;
 }
 
-.row1-budget,.m-b-r-top-form-submit{
+.row1-budget,.m-b-r-top-form-submit:hover{
     background-color: #E8F167;
     
 }
@@ -32,7 +41,7 @@
     border-radius: 1rem;
 }
 
-.m-h-l-searchbar,.m-b-r-bottom{
+.m-h-l-searchbar,.m-b-r-bottom,.m-b-r-top-form-amount,.m-b-r-top-form-title,.m-b-r-top-form-date,.m-b-r-top-form-category{
     background-color: #303131;
 }
 

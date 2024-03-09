@@ -4,9 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>side-bar</title>
-    <link href="./src/output.css" rel="stylesheet">
-    <link href="./src/css/sidebar.css" rel="stylesheet">
-    <link href="./src/css/dashboard.css" rel="stylesheet">
+    <link href="/src/output.css" rel="stylesheet">
+    <link href="/src/css/sidebar.css" rel="stylesheet">
+    <link href="/src/css/dashboard.css" rel="stylesheet">
+<!--    <link href="./output.css" rel="stylesheet">-->
+<!--    <link href="./css/sidebar.css" rel="stylesheet">-->
+<!--    <link href="./css/dashboard.css" rel="stylesheet">-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -219,32 +222,52 @@
                 </div>
             </div>
 
-            <div class="m-body-right py-8 px-10 flex flex-col gap-3 max-w-md">
-                <div class="m-b-r-top px-8 pt-6 pb-12 my-4">
-                    <div class="m-b-r-top-header flex justify-between">
+            <div class="m-body-right py-8 px-8 flex flex-col gap-3">
+                <div class="m-b-r-top pt-6 pb-12 my-4 px-8">
+                    <div class="m-b-r-top-header flex justify-between items-center">
                         <div class="m-b-r-top-h-left text-gray-300 text-xl font-semibold">Transaction</div>
-                        <div class="m-b-r-top-h-right text-sm text-gray-400 font-semibold"><i class="fa-solid fa-plus fa-sm"></i> Add a new one</div>
+                        <button class="m-b-r-top-form-submit m-b-r-top-h-right text-sm text-gray-400 font-semibold hover:text-black rounded-xl p-1 hover:text-md hover:font-bold hover:p-2 ease-in-out duration-300"><i class="fa-solid fa-plus fa-sm"></i> Add a new one</button>
                     </div>
 
-                    <form class="m-b-r-top-form flex flex-col gap-2 pt-5">
-                        <input class="m-b-r-top-form-amount px-2 py-1 rounded-xl bg-zinc-700" placeholder="Amount" type="number">
-                        <input class="m-b-r-top-form-title px-2 py-1 rounded-xl bg-zinc-700" placeholder="Title" type="text">
+                    <form class="m-b-r-top-form pt-5 flex flex-col gap-3 ">
+                        <div class="m-b-r-top-form-amount-container border-b-2 flex flex-col">
+                            <div class="m-b-r-top-form-amount-container-header pl-1 text-gray-400 font-semibold text-lg">Amount</div>
+                            <div class="input-amount-flex"><input class="m-b-r-top-form-amount text-white px-4 font-semibold text-3xl max-w-60 border-0 placeholder:text-gray-300"><i class="fa-solid fa-indian-rupee-sign text-2xl text-gray-200"></i></div>     
+                        </div>
+
+                        <div class="m-b-r-t-title-container pt-1 border-b-2">
+                            <div class="m-b-r-t-title-header pl-1 text-gray-400 font-semibold text-sm">Title</div>
+                            <input class="m-b-r-top-form-title text-white px-4 font-semibold text-md max-w-60 border-0 placeholder:text-gray-300" type="text">
+                        </div>
+
+                        <div class="m-b-r-t-f-date-container pt-1 border-b-2">
+                            <div class="m-b-r-t-title-header pl-1 text-gray-400 font-semibold text-sm">Date</div>
+                            <input class="m-b-r-top-form-date text-white px-4 font-semibold text-md w-full border-0 placeholder:text-gray-300"type="date">
+                        </div>
+
+                        <div class="m-b-r-t-f-category-container pt-1 border-b-2">
+                            <div class="m-b-r-t-title-header pl-1 text-gray-400 font-semibold text-sm">Expenses Made for</div>
+                            <select class="m-b-r-top-form-category text-white px-4 font-semibold text-md border-0 w-full">
+                                <option>Category</option>
+                                <option>hello</option>
+                            </select>
+                        </div>
+
+                        
+                        <!-- <input class="m-b-r-top-form-title px-2 py-1 rounded-xl bg-zinc-700" placeholder="Title" type="text">
                         <input class="m-b-r-top-form-date px-2 py-1 rounded-xl bg-zinc-700" placeholder="Date" type="date">
-                        <select class="m-b-r-top-form-category px-2 py-1 rounded-xl bg-zinc-700">
-                            <option>Category</option>
-                            <option>hello</option>
-                        </select>
+                        
                         <select class="wallet">
                             <option>savings</option>
-                        </select>
-                        <button class="m-b-r-top-form-submit rounded-xl px-2 py-1 font-semibold">Submit</button>
+                        </select> -->
+                        <!-- <button class="m-b-r-top-form-submit rounded-xl px-2 py-1 font-semibold">Submit</button> -->
                     </form>
 
                     <!-- <div class="m-b-r-top-card flex flex-col gap-4 mt-2 px-5 py-6 mt-3 rounded-2xl">
                         <div class="card-header flex justify-between ">
                             <div class="card-amount text-lg font-semibold">
                                 Rs 0000
-                            </div>
+                            </div>--
                             <div class="card-logo text-xl font-semibold">
                                 VISA
                             </div>
@@ -282,4 +305,8 @@
 <script src="./src/js/row3chart.js"></script>
 <script src="./src/js/doughnut-chart.js"></script>
 <script src="./src/js/dashboard.js"></script>
+<!--<script src="./js/centerchart.js"></script>-->
+<!--<script src="./js/row3chart.js"></script>-->
+<!--<script src="./js/doughnut-chart.js"></script>-->
+<!--<script src="./js/dashboard.js"></script>-->
 </html>
