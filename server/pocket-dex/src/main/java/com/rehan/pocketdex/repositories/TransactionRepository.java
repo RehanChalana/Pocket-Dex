@@ -11,13 +11,18 @@ import java.util.List;
 @Repository
 public class TransactionRepository {
     private final JdbcTemplate jdbcTemplate;
-    public TransactionRepository(JdbcTemplate jdbcTemplate) {
+    private final WalletRepository walletRepository;
+    public TransactionRepository(JdbcTemplate jdbcTemplate,WalletRepository walletRepository) {
         this.jdbcTemplate=jdbcTemplate;
+        this.walletRepository = walletRepository;
     }
 
     public void addTransaction(Transaction transaction) {
+
+        walletRepository.updateBalance(transaction.getTransaction_amount(),transaction.getWallet_name());
         String sql = "INSERT INTO transactions (wallet_name,username,transaction_amount,transaction_title,transaction_date,transaction_category) VALUES (?,?,?,?,?,?)";
         jdbcTemplate.update(sql,transaction.getWallet_name(),transaction.getUsername(),transaction.getTransaction_amount(),transaction.getTransaction_title(),transaction.getTransaction_date(),transaction.getTransaction_category());
+
     }
 
     public List<Transaction> getAllTransaction(String username) {
