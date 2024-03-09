@@ -24,6 +24,7 @@ public class SecurityConfig {
         http.authorizeHttpRequests((auth) ->{
             auth.requestMatchers(HttpMethod.POST,"/signup").permitAll();
             auth.anyRequest().authenticated();
+//            auth.anyRequest().permitAll();
         }).formLogin(withDefaults())
                 .csrf().disable();
 

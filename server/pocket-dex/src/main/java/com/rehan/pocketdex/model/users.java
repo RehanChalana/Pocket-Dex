@@ -9,18 +9,9 @@ import jakarta.persistence.Id;
 public class users {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int user_id;
     private String username;
     private String password_hash;
 
-    public int getUser_id() {
-        return user_id;
-    }
-
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
 
     public String getUsername() {
         return username;

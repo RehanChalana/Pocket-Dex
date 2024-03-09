@@ -3,22 +3,20 @@ package com.rehan.pocketdex.model;
 import java.math.BigDecimal;
 
 public class Transaction {
-    private int user_id;
 
-    public int getUser_id() {
-        return user_id;
+    private String username;
+    private String wallet_name;
+    private BigDecimal transaction_amount;
+    private String transaction_title;
+    private String transaction_date;
+    private String transaction_category;
+
+    public String getUsername() {
+        return username;
     }
 
-    public void setUser_id(int user_id) {
-        this.user_id = user_id;
-    }
-
-    public int getWallet_id() {
-        return wallet_id;
-    }
-
-    public void setWallet_id(int wallet_id) {
-        this.wallet_id = wallet_id;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public BigDecimal getTransaction_amount() {
@@ -53,10 +51,12 @@ public class Transaction {
         this.transaction_category = transaction_category;
     }
 
-    private int wallet_id;
-    private BigDecimal transaction_amount;
-    private String transaction_title;
-    private String transaction_date;
-    private String transaction_category;
+    public String getWallet_name() {
+        return wallet_name;
+    }
+
+    public void setWallet_name(String wallet_name) {
+        this.wallet_name = wallet_name;
+    }
 
 }
