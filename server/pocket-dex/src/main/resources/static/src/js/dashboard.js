@@ -109,8 +109,7 @@ fetchData().then(data => {
         <div class="entry-category text-slate-300">${topThreeRecentTransactions[i].transaction_category}</div>
     </div>
 </div>`;
-row_3_h_list.appendChild(row3_h_list_entry);
-  
+row_3_h_list.appendChild(row3_h_list_entry); 
 }
   // console.log(topThreeRecentTransactions);
 })

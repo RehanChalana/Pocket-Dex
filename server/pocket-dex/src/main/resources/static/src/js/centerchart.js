@@ -14,7 +14,7 @@ function fetchData() {
     })
     .then(data => {
       // Do whatever you want with the JSON data
-      console.log(data);
+      // console.log(data);
       return data; // Return the data fetched from the server
     })
     .catch(error => {
@@ -48,8 +48,8 @@ const transactionsForDate = data.filter(trans => trans.transaction_date === date
 });
 recentDates.reverse();
 recentDatesAmount.reverse();
-console.log("Recent Dates Amount:", recentDatesAmount);
-console.log("Recent Dates:", recentDates);
+// console.log("Recent Dates Amount:", recentDatesAmount);
+// console.log("Recent Dates:", recentDates);
 
 var gradient = ctxContext.createLinearGradient(0, 0, 0, ctx.height*1.3);
 gradient.addColorStop(0, 'rgba(232,241,103,0.7)');   
@@ -89,7 +89,9 @@ gradient.addColorStop(1, 'rgba(232,241,103,0.1)');
           },
           ticks:{color:'rgb(209 213 219)'}
         }
-      },plugins:{legend:{labels:{color:'rgb(209 213 219)'}}},
+      },
+      plugins:{legend:{labels:{color:'rgb(209 213 219)'}}},
+
       animations:{
         tension: {
           duration: 1000,
