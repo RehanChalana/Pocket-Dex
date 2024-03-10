@@ -39,7 +39,7 @@ const recentDates = uniqueDates.slice(0, 7);
 
 const recentDatesAmount = recentDates.map(date => {
   // Filter transactions for the current date
-  const transactionsForDate = data.filter(trans => trans.transaction_date === date);
+const transactionsForDate = data.filter(trans => trans.transaction_date === date);
   
   // Sum up transaction amounts for the current date
   const totalAmountForDate = transactionsForDate.reduce((total, trans) => total + trans.transaction_amount, 0);

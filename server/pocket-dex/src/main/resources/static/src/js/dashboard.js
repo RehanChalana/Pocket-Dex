@@ -86,4 +86,31 @@ async function addTransaction(event) {
     } catch (error) {
         console.error('Error:', error);
     }
+
+    location.reload();
 }
+
+
+// updating transaction-history small version !
+const row_3_h_list = document.querySelector(".row3-h-list");
+fetchData().then(data => {
+  data.sort((a, b) => new Date(b.transaction_date) - new Date(a.transaction_date));
+  const topThreeRecentTransactions = data.slice(0, 3);
+  for(let i in topThreeRecentTransactions) {
+    let row3_h_list_entry = document.createElement("div");
+    row3_h_list_entry.classList.add("row3-h-list","flex-col");
+    row3_h_list_entry.innerHTML=`<div class="row3-list-entry flex justify-between py-1">
+    <div class="list-entry-left w-28">
+        <div class="entry-name text-white font-semibold">${topThreeRecentTransactions[i].transaction_title}</div>
+        <div class="entry-date text-slate-300">${topThreeRecentTransactions[i].transaction_date}</div>
+    </div>
+    <div class="list-entry-right w-20">
+        <div class="entry-amount text-white font-semibold">Rs ${topThreeRecentTransactions[i].transaction_amount}</div>
+        <div class="entry-category text-slate-300">${topThreeRecentTransactions[i].transaction_category}</div>
+    </div>
+</div>`;
+row_3_h_list.appendChild(row3_h_list_entry);
+  
+}
+  // console.log(topThreeRecentTransactions);
+})
