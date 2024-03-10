@@ -12,6 +12,7 @@ function fetchData() {
     })
     .then(data => {
       // Do whatever you want with the JSON data
+      console.log(data);
       return data; // Return the data fetched from the server
     })
     .catch(error => {

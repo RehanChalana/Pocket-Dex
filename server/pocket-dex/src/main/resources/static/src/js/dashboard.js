@@ -78,7 +78,7 @@ async function addTransaction(event) {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
-                'wallet_name_header':'savings'
+                'wallet_name_header':'savings_testing'
             },
             body: JSON.stringify(data)
         });
