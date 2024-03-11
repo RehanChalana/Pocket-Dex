@@ -161,10 +161,10 @@
             </div>
 
             <div class="m-body-right py-8 px-8 flex flex-col gap-3">
-                <div class="m-b-r-top pt-6 pb-12 my-4 px-8">
+                <div class="m-b-r-top pt-6 pb-12 my-4 px-8 min-w-80">
                     <div class="m-b-r-top-header flex justify-between items-center">
                         <div class="m-b-r-top-h-left text-gray-300 text-xl font-semibold">Transaction</div>
-                        <button class="m-b-r-top-form-submit m-b-r-top-h-right text-sm text-gray-400 font-semibold hover:text-black rounded-xl p-1 hover:text-md hover:font-bold hover:p-2 ease-in-out duration-300" type="submit"><i class="fa-solid fa-plus fa-sm"></i> Add a new one</button>
+                        <button class="m-b-r-top-form-submit m-b-r-top-h-right text-lg text-gray-400 font-semibold hover:text-black rounded-xl p-1 hover:text-md hover:font-bold hover:p-2 ease-in-out duration-300" type="submit"><i class="fa-solid fa-plus fa-sm"></i> Add </button>
                     </div>
 
                     <form class="m-b-r-top-form pt-5 flex flex-col gap-3 ">
@@ -187,7 +187,23 @@
                             <div class="m-b-r-t-title-header pl-1 text-gray-400 font-semibold text-sm">Expenses Made for</div>
                             <select class="m-b-r-top-form-category text-white px-4 font-semibold text-md border-0 w-full">
                                 <option>Category</option>
-                                <option>hello</option>
+                                <option>Food</option>
+                                <option>Educational expenses</option>
+                                <option>Transportation</option>
+                                <option>Entertainment</option>
+                                <option>Utilities</option>
+                                <option>Healthcare</option>
+                                <option>Shopping</option>
+                                <option>Travel</option>
+                                <option>Home improvement</option>
+                                <option>Gifts & Donations</option>
+                                <option>Insurance</option>
+                                <option>Investments</option>
+                                <option>Debt Payments</option>
+                                <option>Subscriptions</option>
+                                <option>Personal Care</option>
+                                <option>Electronics</option>
+                                <option>Others</option>
                             </select>
                         </div>
 
@@ -224,11 +240,11 @@
                 </div>
                 
                 <div class="m-b-r-bottom rounded-2xl">
-                    <div class="m-b-r-b-header p-6 flex justify-between">
+                    <div class="m-b-r-b-header px-6 pt-6 flex justify-between">
                         <div class="m-b-r-b-header-left text-gray-300 text-xl font-semibold">All expenses</div>
                         <div class="m-b-r-b-header-right text-gray-400 font-semibold">this month <i class="fa-solid fa-angle-down fa-sm"></i></div>
                     </div>
-                    <div class="m-b-r-bottom-chart-container p-4">
+                    <div class="m-b-r-bottom-chart-container py-6">
                         <canvas id="bottom-doughnut-chart"></canvas>
                     </div>
                 </div>
