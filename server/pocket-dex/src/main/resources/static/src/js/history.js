@@ -1,3 +1,10 @@
+// updating history date
+
+
+
+
+
+
 const url = "http://localhost:8080/transaction";  
 
 let transaction_data;
@@ -26,7 +33,7 @@ fetchData().then(data => {
   transaction_data = data;
   for(let key in transaction_data) {
    let listEntry = document.createElement("div");
-   listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center");
+   listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center","hover:font-semibold","hover:text-xl","hover:px-5","hover:py-4","ease-in-out","duration-300","hover:bg-neutral-800");
    listEntry.innerHTML = `<div class=history-entry-options-icon"><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></div>
                           <div class="history-entry-date">${transaction_data[key].transaction_date}</div>
                           <div class="history-entry-name">${transaction_data[key].transaction_title}</div>
