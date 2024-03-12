@@ -113,3 +113,7 @@ row_3_h_list.appendChild(row3_h_list_entry);
 }
   // console.log(topThreeRecentTransactions);
 })
+
+
+// updating data on mouse clicks!
+

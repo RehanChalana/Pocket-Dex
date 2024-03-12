@@ -42,9 +42,9 @@ const recentDatesAmount = recentDates.map(date => {
 const transactionsForDate = data.filter(trans => trans.transaction_date === date);
   
   // Sum up transaction amounts for the current date
-  const totalAmountForDate = transactionsForDate.reduce((total, trans) => total + trans.transaction_amount, 0);
+const totalAmountForDate = transactionsForDate.reduce((total, trans) => total + trans.transaction_amount, 0);
   
-  return totalAmountForDate;
+return totalAmountForDate;
 });
 recentDates.reverse();
 recentDatesAmount.reverse();
@@ -57,7 +57,7 @@ gradient.addColorStop(0.3,'rgba(232,241,103,0.5)');
 gradient.addColorStop(0.7,'rgba(232,241,103,0.3)');
 gradient.addColorStop(1, 'rgba(232,241,103,0.1)');
 
-  new Chart(ctx, {
+let mainChart = new Chart(ctx, {
     type: 'line',
     data: {
       labels: recentDates,
@@ -100,12 +100,117 @@ gradient.addColorStop(1, 'rgba(232,241,103,0.1)');
           to: 0,
           loop: true
         }
-      }
-
-      
+      } 
     }
   });
 
+  const monthBtn = document.querySelector(".row2-h-r-month");
+  const weekBtn = document.querySelector(".row2-h-r-day");
+  const yearBtn = document.querySelector(".row2-h-r-year");
+
+  // updating data day wise  
+
+  weekBtn.addEventListener("click",function() {
+    mainChart.data.datasets[0].data = recentDatesAmount;
+    mainChart.data.labels = recentDates;
+    mainChart.update();
+    monthBtn.classList.remove("text-gray-300");
+    monthBtn.classList.add("text-zinc-500");
+    weekBtn.classList.add("text-gray-300");
+    weekBtn.classList.remove("text-zinc-500");
+    yearBtn.classList.remove("text-gray-300");
+    yearBtn.classList.add("text-zinc-500");
+  })
+
+  // updating graph month wise
+
+  monthBtn.addEventListener("click", function() {
+    const uniqueMonths = [...new Set(data.map(trans => {
+      const date = new Date(trans.transaction_date);
+      return `${date.getFullYear()}-${date.getMonth() + 1}`;
+    }))];
+    
+    // Sort months in descending order
+    uniqueMonths.sort((a, b) => {
+      const [yearA, monthA] = a.split('-');
+      const [yearB, monthB] = b.split('-');
+      return new Date(yearB, monthB - 1) - new Date(yearA, monthA - 1);
+    });
+    
+    // Get the last 7 recent months
+    const recentMonths = uniqueMonths.slice(0, 7);
+    
+    // Calculate total amount for each recent month
+    const totalAmountForMonth = recentMonths.map(month => {
+      const [year, monthNumber] = month.split('-');
+      const totalAmountForMonth = data.reduce((total, trans) => {
+        const transactionDate = new Date(trans.transaction_date);
+        if (transactionDate.getFullYear() == year && transactionDate.getMonth() == monthNumber - 1) {
+          return total + trans.transaction_amount;
+        } else {
+          return total;
+        }
+      }, 0);
+      return totalAmountForMonth;
+    });
+    recentMonths.reverse();
+    totalAmountForMonth.reverse();
+    console.log(recentMonths);
+    console.log(totalAmountForMonth);
+
+    mainChart.data.datasets[0].data = totalAmountForMonth;
+    mainChart.data.labels = recentMonths;
+    mainChart.update();
+
+    monthBtn.classList.add("text-gray-300");
+    monthBtn.classList.remove("text-zinc-500");
+    weekBtn.classList.remove("text-gray-300");
+    weekBtn.classList.add("text-zinc-500");
+    yearBtn.classList.remove("text-gray-300");
+    yearBtn.classList.add("text-zinc-500");
+});
+
+// updating data year wise
+  yearBtn.addEventListener("click",function() {
+  const uniqueYears = [...new Set(data.map(trans => new Date(trans.transaction_date).getFullYear()))];
+
+// Sort years in descending order
+uniqueYears.sort((a, b) => b - a);
+
+// Get the last 7 recent years
+const recentYears = uniqueYears.slice(0, 7);
+
+// Calculate total amount for each recent year
+const totalAmountForYear = recentYears.map(year => {
+  const totalAmountForYear = data.reduce((total, trans) => {
+    if (new Date(trans.transaction_date).getFullYear() == year) {
+      return total + trans.transaction_amount;
+    } else {
+      return total;
+    }
+  }, 0);
+  return totalAmountForYear;
+});
+
+  
+  console.log(recentYears);
+  console.log(totalAmountForYear);
+
+  recentYears.reverse();
+  totalAmountForYear.reverse();
+
+  monthBtn.classList.remove("text-gray-300");
+  monthBtn.classList.add("text-zinc-500");
+  weekBtn.classList.remove("text-gray-300");
+  weekBtn.classList.add("text-zinc-500");
+  yearBtn.classList.add("text-gray-300");
+  yearBtn.classList.remove("text-zinc-500");
+
+  mainChart.data.datasets[0].data = totalAmountForYear;
+  mainChart.data.labels = recentYears;
+  mainChart.update();
+
+  })
 
 }
 )
