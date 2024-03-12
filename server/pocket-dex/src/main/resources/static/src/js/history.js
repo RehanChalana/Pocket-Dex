@@ -1,4 +1,18 @@
 // updating history date
+const currentDate = new Date();
+let curDay = currentDate.getDate();
+let curMonth = currentDate.getMonth() + 1; // Months are zero-based
+let curYear = currentDate.getFullYear();
+
+if(curDay<10) {
+  curDay = `0${curDay}`;
+}
+if(curMonth<10) {
+  curMonth = `0${curMonth}`
+}
+const mainBodyDateContainer = document.querySelector(".main-date-text");
+mainBodyDateContainer.innerHTML=`${curDay}-${curMonth}-${curYear}`;
+
 
 
 
