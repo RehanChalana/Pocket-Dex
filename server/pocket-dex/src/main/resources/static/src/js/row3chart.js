@@ -1,4 +1,5 @@
 const row3chart = document.getElementById('row3-chart');
+const chartSelection = document.querySelector(".row-3-chart-options");
 
 fetchData().then( data => {
 const sortedData = data.sort((a, b) => new Date(b.transaction_date) - new Date(a.transaction_date));
@@ -16,13 +17,15 @@ for (const transaction of sortedData) {
         frequencies[index]++;
     }
 }
+dates.reverse();
+frequencies.reverse();
 // Output the results
 console.log("Dates array:", dates);
 console.log("Frequencies array:", frequencies);
 
 
 
-  new Chart(row3chart, {
+const row3chartvar = new Chart(row3chart, {
     type: 'bar',
     data: {
       labels: dates,
@@ -58,13 +61,63 @@ console.log("Frequencies array:", frequencies);
           to: 0,
           loop: true
         }
-      }
-      
-
-
-
-    }
+      }   }
   });
+
+
+  chartSelection.addEventListener("change",function () {
+    if(chartSelection.value == "monthly") {
+      const sortedData = data.sort((a, b) => new Date(b.transaction_date) - new Date(a.transaction_date));
+      const monthlyTransactions = {};
+      for (const transaction of sortedData) {
+          const month = new Date(transaction.transaction_date).toLocaleString('default', { month: 'long' });
+          if (monthlyTransactions.hasOwnProperty(month)) {
+              monthlyTransactions[month]++;
+          } else {
+              monthlyTransactions[month] = 1;
+          }
+      }
+      const months = Object.keys(monthlyTransactions).sort((a, b) => new Date(b + ' 1, 2024') - new Date(a + ' 1, 2024'));
+      const frequenciesMonthly = months.map(month => monthlyTransactions[month]);
+      months.reverse();
+      frequenciesMonthly.reverse();
+      console.log(months);
+      console.log(frequencies);
+      row3chartvar.data.datasets[0].data=frequenciesMonthly;
+      row3chartvar.data.labels=months;
+      row3chartvar.update();
+    }
+
+    if(chartSelection.value=="weekly") {
+      row3chartvar.data.datasets[0].data=frequencies;
+      row3chartvar.data.labels=dates;
+      row3chartvar.update();
+    }
+
+    if(chartSelection.value=="Yearly") {
+      const sortedData = data.sort((a, b) => new Date(b.transaction_date) - new Date(a.transaction_date));
+      const uniqueDates = new Set();
+      const years = [];
+      const frequenciesYearly = [];
+      for (const transaction of sortedData) {
+          const year = new Date(transaction.transaction_date).getFullYear();
+          if (!uniqueDates.has(year)) {
+              uniqueDates.add(year);
+              years.push(year);
+              frequenciesYearly.push(1);
+          } else {
+              const index = years.indexOf(year);
+              frequenciesYearly[index]++;
+          }
+      }
+      years.reverse();
+      frequenciesYearly.reverse();
+
+      row3chartvar.data.datasets[0].data=frequenciesYearly;
+      row3chartvar.data.labels=years;
+      row3chartvar.update();
+    }
+  })
 });
   
   
