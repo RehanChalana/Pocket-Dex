@@ -6,10 +6,12 @@
     <link href="/src/output.css" rel="stylesheet">
     <link href="/src/css/sidebar.css" rel="stylesheet">
     <link href="/src/css/history.css" rel="stylesheet">
+    <link href="/src/css/downloadBtn.css" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
     <title>Pocket-Dex</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body>
     <div class="sidebar w-56 h-full flex flex-col fixed justify-between font-sans text-gray-300 text-base p-6">
@@ -52,9 +54,22 @@
 
         <div class="main-history-container p-3 rounded-xl flex flex-col gap-5 overflow-auto mb-7">
             <div class="m-h-c-header flex justify-between p-2">
-                <div class="m-h-c-header-left pl-6 pr-56 py-1 rounded-2xl text-gray-300 ml-28">
+                <!-- <div class="m-h-c-header-left pl-6 pr-56 py-1 rounded-2xl text-gray-300 ml-28">
                     <i class="fa-solid fa-magnifying-glass"></i>
                     Search
+                </div> -->
+
+                <div id="wrap">
+                    <a href="#" class="btn-slide pdf-btn">
+                      <span class="circle"><i class="fa-solid fa-file-pdf"></i></span>
+                      <span class="title">PDF</span>
+                      <span class="title-hover">Click here</span>
+                    </a>
+                    <a href="#" class="btn-slide2 excel-btn">
+                      <span class="circle2"><i class="fa-solid fa-file-excel"></i></span>
+                      <span class="title2">Excel</span>
+                      <span class="title-hover2">Click here</span>
+                    </a>
                 </div>
 
                 <div class="m-h-c-header-right flex gap-4">
@@ -99,5 +114,7 @@
     
 </body>
 <script src="https://kit.fontawesome.com/0010a0ae9f.js" crossorigin="anonymous"></script>
-<script src="./src/js/history.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.0/xlsx.full.min.js"></script>
+<script src="/src/js/history.js"></script>
+<script src="/src/js/historyDownload.js"></script>
 </html>

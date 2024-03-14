@@ -56,24 +56,24 @@ input[type="text"], input[type="password"], textarea {
     gap:2rem;
 }
 
-.row3-history , .row3-chat{
+/* .row3-history , .row3-chat{
     flex-grow: 1;
-}
+} */
 
 .row3-h-list{
     display: flex;
     gap: 0.5rem;
 }
 
-#row3-chart{
+/* #row3-chart{
     height:80%;
-}
+} */
 
 .m-b-r-top-card{
     background-image: linear-gradient(to bottom right,#E8F167,#8BF167,#1DAFA6);
 }
 
-.row3-history{
+/* .row3-history{
     flex-grow: 5;
-}
+} */
 

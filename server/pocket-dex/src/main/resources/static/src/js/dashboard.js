@@ -98,7 +98,7 @@ fetchData().then(data => {
   const topThreeRecentTransactions = data.slice(0, 3);
   for(let i in topThreeRecentTransactions) {
     let row3_h_list_entry = document.createElement("div");
-    row3_h_list_entry.classList.add("row3-h-list","flex-col");
+    row3_h_list_entry.classList.add("row3-h-list","flex-col","max-h-14","text-ellipsis" , "overflow-hidden");
     row3_h_list_entry.innerHTML=`<div class="row3-list-entry flex justify-between py-1">
     <div class="list-entry-left w-28">
         <div class="entry-name text-white font-semibold">${topThreeRecentTransactions[i].transaction_title}</div>
