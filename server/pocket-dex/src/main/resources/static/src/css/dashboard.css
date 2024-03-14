@@ -41,7 +41,7 @@ input[type="text"], input[type="password"], textarea {
     border-radius: 1rem;
 }
 
-.m-h-l-searchbar,.m-b-r-bottom,.m-b-r-top-form-amount,.m-b-r-top-form-title,.m-b-r-top-form-date,.m-b-r-top-form-category,.row-3-chart-options{
+.m-h-l-searchbar,.m-b-r-bottom,.m-b-r-top-form-amount,.m-b-r-top-form-title,.m-b-r-top-form-date,.m-b-r-top-form-category,.row-3-chart-options,.m-b-r-bottom-chart-selection{
     background-color: #303131;
 }
 

@@ -248,7 +248,13 @@
                 <div class="m-b-r-bottom rounded-2xl">
                     <div class="m-b-r-b-header px-6 pt-6 flex justify-between">
                         <div class="m-b-r-b-header-left text-gray-300 text-xl font-semibold">All expenses</div>
-                        <div class="m-b-r-b-header-right text-gray-400 font-semibold">this month <i class="fa-solid fa-angle-down fa-sm"></i></div>
+                        <div class="m-b-r-b-header-right text-gray-400 font-semibold">
+                            <select class="m-b-r-bottom-chart-selection">
+                                <option>all time</option>
+                                <option>this month</option>
+                                <option>this year</option>
+                            </select>
+                        </div>
                     </div>
                     <div class="m-b-r-bottom-chart-container py-6">
                         <canvas id="bottom-doughnut-chart"></canvas>
