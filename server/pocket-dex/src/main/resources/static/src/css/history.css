@@ -15,3 +15,7 @@
 .history-entry-check{
     background-color: #E8F167;
 }
+
+.history-list-entry:hover {
+    background-color: #E8F167;
+}
