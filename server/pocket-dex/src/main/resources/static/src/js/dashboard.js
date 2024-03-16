@@ -1,4 +1,11 @@
+// declaring consts
+const budget80Toast = document.querySelector(".main-toast-budget-limit-cont");
+const transSuccessToast = document.querySelector(".main-toast-trans-success-cont");
+const transFailedToast = document.querySelector(".main-toast-trans-failed-cont");
 
+const budgetContainer = document.querySelector(".row1-budget-amount");
+const balanceContainer = document.querySelector(".row1-balance-amount");
+const expenseContainer = document.querySelector(".row1-expense-amount");
 
 // updating dashboard date 
 
@@ -36,59 +43,79 @@ async function getWallets() {
     });
 }
 
-const budgetContainer = document.querySelector(".row1-budget-amount");
-const balanceContainer = document.querySelector(".row1-balance-amount");
-const expenseContainer = document.querySelector(".row1-expense-amount");
+
+
 
 getWallets().then(data => {
     let budget = data[0].budget;
     let balance = data[0].balanace;
+    if(balance <= 0.2*budget) {
+      console.log("if less than 80")
+      budget80Toast.classList.remove("hidden");
+    } 
     budgetContainer.innerHTML = `Rs ${budget}`;
     balanceContainer.innerHTML = `Rs ${balance}`;
     expenseContainer.innerHTML = `Rs ${budget - balance}`;
 })
 
 
+async function performTransaction(amount, title, date, category) {
+  try {
+      const wallets = await getWallets();
+      if (wallets[0].balanace > amount) {
+          budget80Toast.classList.add("hidden");
+          transFailedToast.classList.add("hidden");
+          transSuccessToast.classList.remove("hidden");
+
+          const url = "http://localhost:8080/transaction";
+          const user = "rehan";
+          const wallet = document.querySelector(".wallet").value;
+          const transactionData = {
+              "wallet_name": wallet,
+              "username": user,
+              "transaction_amount": amount,
+              "transaction_title": title,
+              "transaction_date": date,
+              "transaction_category": category
+          };
+
+          const response = await fetch(url, {
+              method: 'POST',
+              headers: {
+                  'Content-Type': 'application/json',
+                  'wallet_name_header': 'savings'
+              },
+              body: JSON.stringify(transactionData)
+          });
+          console.log('Response Status:', response.status);
+          setTimeout(function () {
+              location.reload(); // Reload the page after 2 seconds (adjust the delay time as needed)
+          }, 2000);
+      } else {
+          budget80Toast.classList.add("hidden");
+          transFailedToast.classList.remove("hidden");
+      }
+  } catch (error) {
+      console.error('Error:', error);
+  }
+}
+
+async function addTransaction(event) {
+  let amount = document.querySelector(".m-b-r-top-form-amount").value;
+  let title = document.querySelector(".m-b-r-top-form-title").value;
+  let date = document.querySelector(".m-b-r-top-form-date").value;
+  let category = document.querySelector(".m-b-r-top-form-category").value;
+  performTransaction(amount, title, date, category);
+}
 
 const submitBtn = document.querySelector(".m-b-r-top-form-submit");
 
 submitBtn.addEventListener("click", addTransaction);
 
-async function addTransaction(event) {
 
-    let amount = document.querySelector(".m-b-r-top-form-amount").value;
-    let title = document.querySelector(".m-b-r-top-form-title").value;
-    let date = document.querySelector(".m-b-r-top-form-date").value;
-    let category = document.querySelector(".m-b-r-top-form-category").value;
+// Call the function with appropriate arguments
 
-    const url = "http://localhost:8080/transaction";
-    let user = "rehan";
-    let wallet = document.querySelector(".wallet").value;
-    const data = {
-        "wallet_name": wallet,
-        "username": user,
-        "transaction_amount": amount,
-        "transaction_title": title,
-        "transaction_date": date,
-        "transaction_category": category
-    };
 
-    try {
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'wallet_name_header':'saving_testing2'
-            },
-            body: JSON.stringify(data)
-        });
-        console.log('Response Status:', response.status);
-    } catch (error) {
-        console.error('Error:', error);
-    }
-
-    location.reload();
-}
 
 
 // updating transaction-history small version !

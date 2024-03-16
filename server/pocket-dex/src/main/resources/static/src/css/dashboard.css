@@ -77,3 +77,18 @@ input[type="text"], input[type="password"], textarea {
     flex-grow: 5;
 } */
 
+.main-toast-trans-success{
+    border-width: 3px;
+    background-color: rgba(77,124,15,0.1);
+}
+
+.main-toast-trans-failed  {
+    border-width: 3px;
+    background-color: rgba(185,28,28,0.1);
+}
+
+.main-toast-budget-limit {
+    border-width: 3px;
+    background-color: rgba(194,65,12,0.1);
+}
+

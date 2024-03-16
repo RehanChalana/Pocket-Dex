@@ -19,3 +19,7 @@
 .history-list-entry:hover {
     background-color: #E8F167;
 }
+
+.main-history-container::-webkit-scrollbar {
+    display: none;
+  }
