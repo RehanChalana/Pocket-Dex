@@ -79,18 +79,32 @@ async function performTransaction(amount, title, date, category) {
               "transaction_category": category
           };
 
-          const response = await fetch(url, {
-              method: 'POST',
-              headers: {
-                  'Content-Type': 'application/json',
-                  'wallet_name_header': 'savings'
-              },
-              body: JSON.stringify(transactionData)
-          });
-          console.log('Response Status:', response.status);
-          setTimeout(function () {
-              location.reload(); // Reload the page after 2 seconds (adjust the delay time as needed)
-          }, 2000);
+
+
+         // Fetch the wallets asynchronously and set the header after obtaining the value
+getWallets().then(wallets => {
+    const walletName = wallets[0].wallet_name;
+
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    headers.append('wallet_name_header', walletName);
+
+    fetch(url, {
+        method: 'POST',
+        headers: headers,
+        body: JSON.stringify(transactionData)
+    })
+    .then(response => {
+        console.log('Response Status:', response.status);
+        setTimeout(function () {
+            location.reload(); // Reload the page after 2 seconds (adjust the delay time as needed)
+        }, 2000);
+    })
+    .catch(error => {
+        console.error('Error occurred:', error);
+    });
+});
+
       } else {
           budget80Toast.classList.add("hidden");
           transFailedToast.classList.remove("hidden");
