@@ -7,14 +7,19 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class PageController {
-    @GetMapping("/dashboard")
-    public String dashboard() {
-        return "/src/dashboard.html";
-    }
+//    @GetMapping("/dashboard")
+//    public String dashboard() {
+//        return "dashboard.html";
+//    }
+//
+//    @GetMapping("/history")
+//    public String history() {
+//        return "/src/history.html";
+//    }
 
-    @GetMapping("/history")
-    public String history() {
-        return "/src/history.html";
+    @GetMapping("/login")
+    public String login() {
+        return "login.html";
     }
 
 

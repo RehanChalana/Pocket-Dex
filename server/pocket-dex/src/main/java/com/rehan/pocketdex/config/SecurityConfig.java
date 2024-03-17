@@ -23,9 +23,22 @@ public class SecurityConfig {
     public SecurityFilterChain filterSecurity(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests((auth) ->{
             auth.requestMatchers(HttpMethod.POST,"/signup").permitAll();
+            auth.requestMatchers("/src/css/**").permitAll();
+            auth.requestMatchers("/src/images/**").permitAll();
+            auth.requestMatchers("/src/js/**").permitAll();
+            auth.requestMatchers("/src/js/vendor/jquery/**").permitAll();
+            auth.requestMatchers("/src/output.css").permitAll();
             auth.anyRequest().authenticated();
 //            auth.anyRequest().permitAll();
-        }).formLogin(withDefaults())
+        }).formLogin(formLogin ->
+                        formLogin
+                                .loginPage("/login") // Specify the URL of your custom login page
+                                .permitAll() // Allow access to the custom login page
+                                .defaultSuccessUrl("/src/dashboard.html", true) // Redirect to /dashboard upon successful login
+                                .failureUrl("/custom-login?error=true") // Redirect to /custom-login?error=true upon login failure
+                                .loginProcessingUrl("/authenticate") // URL where the login form should be submitted
+                                .usernameParameter("username") // Username parameter in the login form
+                                .passwordParameter("password"))
                 .csrf().disable();
 
         return http.build();
