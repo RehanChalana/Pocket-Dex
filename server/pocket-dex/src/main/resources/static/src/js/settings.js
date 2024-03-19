@@ -24,6 +24,9 @@ async function getWallets() {
 
 const changeBudgetBtn = document.querySelector(".m-b-c-heading-button");
 
+
+
+
 changeBudgetBtn.addEventListener("click",function() {
     getWallets().then(data => {
 

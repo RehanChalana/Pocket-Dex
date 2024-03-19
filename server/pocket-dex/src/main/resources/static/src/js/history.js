@@ -49,8 +49,10 @@ function fetchData() {
 }
 
 // Call fetchData to initiate the fetch operation and handle the result
+const userGreet = document.querySelector(".user-greet");
 const historyListContainer = document.querySelector(".history-list-entries");
 fetchData().then(data => {
+    userGreet.innerHTML = `Hello , ${data[0].username}`;
   transaction_data = data;
   for(let key in transaction_data) {
    let listEntry = document.createElement("div");
