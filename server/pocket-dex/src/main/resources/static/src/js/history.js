@@ -1,3 +1,10 @@
+const historyBtn = document.querySelector(".history");
+historyBtn.classList.remove("font-semibold");
+historyBtn.classList.add("sidebar-hover","text-gray-800","font-bold");
+
+
+
+
 // updating history date
 const currentDate = new Date();
 let curDay = currentDate.getDate();
@@ -47,13 +54,13 @@ fetchData().then(data => {
   transaction_data = data;
   for(let key in transaction_data) {
    let listEntry = document.createElement("div");
-   listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center","hover:font-semibold","hover:text-xl","ease-in-out","duration-300","hover:text-gray-800");
+   listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center","hover:font-bold","ease-in-out","duration-300","hover:text-gray-800");
    listEntry.innerHTML = `<div class=history-entry-options-icon"><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></div>
-                          <div class="history-entry-date">${transaction_data[key].transaction_date}</div>
-                          <div class="history-entry-name">${transaction_data[key].transaction_title}</div>
-                          <div class="history-entry-wallet">${transaction_data[key].wallet_name}</div>
-                          <div class="history-entry-amount">${transaction_data[key].transaction_amount}</div>
-                          <div class="history-entry-check text-gray-800 px-2 py-1 font-semibold rounded-lg">Completed</div>`;
+                          <div class="history-entry-date w-28">${transaction_data[key].transaction_date}</div>
+                          <div class="history-entry-name w-28">${transaction_data[key].transaction_title}</div>
+                          <div class="history-entry-wallet w-28">${transaction_data[key].wallet_name}</div>
+                          <div class="history-entry-amount w-28">${transaction_data[key].transaction_amount}</div>
+                          <div class="history-entry-check text-gray-800 px-2 py-1 font-semibold rounded-lg w-28 text-center">${transaction_data[key].transaction_category}</div>`;
    historyListContainer.appendChild(listEntry);
 }
   
@@ -88,13 +95,13 @@ const date2 = new Date(toDate);
 
   for(let key in filteredTransactions) {
     let listEntry = document.createElement("div");
-    listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center","hover:font-semibold","hover:text-xl","ease-in-out","duration-300","hover:text-gray-800");
+    listEntry.classList.add("history-list-entry","flex","justify-between","px-4","py-3","text-gray-300","text-medium","font-medium","rounded-xl","items-center","hover:font-bold","ease-in-out","duration-300","hover:text-gray-800");
     listEntry.innerHTML = `<div class=history-entry-options-icon"><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></div>
-                           <div class="history-entry-date">${filteredTransactions[key].transaction_date}</div>
-                           <div class="history-entry-name">${filteredTransactions[key].transaction_title}</div>
-                           <div class="history-entry-wallet">${filteredTransactions[key].wallet_name}</div>
-                           <div class="history-entry-amount">${filteredTransactions[key].transaction_amount}</div>
-                           <div class="history-entry-check text-gray-800 px-2 py-1 font-semibold rounded-lg">Completed</div>`;
+                           <div class="history-entry-date w-28">${transaction_data[key].transaction_date}</div>
+                           <div class="history-entry-name w-28">${transaction_data[key].transaction_title}</div>
+                           <div class="history-entry-wallet w-28">${transaction_data[key].wallet_name}</div>
+                           <div class="history-entry-amount w-28">${transaction_data[key].transaction_amount}</div>
+                           <div class="history-entry-check text-gray-800 px-2 py-1 font-semibold rounded-lg w-28 text-center">${transaction_data[key].transaction_category}</div>`;
     historyListContainer.appendChild(listEntry);
  }
   })

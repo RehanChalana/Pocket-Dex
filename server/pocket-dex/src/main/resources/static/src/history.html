@@ -17,15 +17,15 @@
     <div class="sidebar w-56 h-full flex flex-col fixed justify-between font-sans text-gray-300 text-base p-6">
         <div class="sidebar-top">
             <div class="s-top-logo"><div class="sidebar-header flex items-center gap-1 mb-8 rounded-full py-4 text-2xl font-semibold"><i class="fa-solid fa-prescription fa-lg"></i>Pocket-Dex</div></div>
-            <div class="home px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-house fa-lg"></i>Home</div>
-            <div class="Dashboard px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-layer-group fa-lg"></i> <a href="/src/dashboard.html">Dashboard</a></div>
-            <div class="wallet px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-wallet fa-lg"></i>Wallet</div>
-            <div class="history px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-clock-rotate-left fa-lg"></i><a href="/src/history.html">History</a></div>
-            <div class="profile px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-user fa-lg"></i>Profile</div>
+            <div class="home px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-house fa-lg"></i>Home</div>
+            <div class="Dashboard px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-layer-group fa-lg"></i> <a href="/src/dashboard.html">Dashboard</a></div>
+            <div class="wallet px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-wallet fa-lg"></i>Wallet</div>
+            <div class="history px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-clock-rotate-left fa-lg"></i> <a href="/src/history.html">History</a></div>
+            <div class="profile px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-user fa-lg"></i>Profile</div>
         </div>
         <div class="sidebar-bottom border-t-2 py-4">
-            <div class="settings px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-gear fa-lg"></i>settings</div>
-            <div class="logout px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i>logout</div>
+            <div class="settings px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-gear fa-lg"></i><a href="/src/settings.html">Settings</div>
+            <div class="logout px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i><a href="/login">logout</a></div>
         </div>
     </div>
 
@@ -94,13 +94,13 @@
             <!-- history-list -->
             <div class="history-list">
                 <!-- list headings -->
-                <div class="history-list-headings flex text-gray-400 pl-6 pr-10 justify-between">
+                <div class="history-list-headings flex text-gray-400 pl-6 justify-between">
                     <div class="history-headings-icon"><i class="fa-solid fa-ellipsis-vertical fa-lg"></i></div>
-                    <div class="history-headings-date min-w-12">Date <i class="fa-solid fa-chevron-down fa-xs"></i></div>
-                    <div class="history-headings-name ml-12">Name <i class="fa-solid fa-chevron-down fa-xs"></i></div>
-                    <div class="history-headings-wallet"> Wallet <i class="fa-solid fa-chevron-down fa-xs"></i></div>
-                    <div class="history-headings-amount">Amount <i class="fa-solid fa-chevron-down fa-xs"></i></div>
-                    <div class="history-headings-status">Status <i class="fa-solid fa-chevron-down fa-xs"></i></div>
+                    <div class="history-headings-date w-28 ">Date</div>
+                    <div class="history-headings-name w-28 ">Name</div>
+                    <div class="history-headings-wallet w-28 "> Wallet</div>
+                    <div class="history-headings-amount w-28 ">Amount</div>
+                    <div class="history-headings-status w-28">Category</div>
                 </div>
                 <!-- list entries -->
                 <div class="history-list-entries flex flex-col gap-4 px-2 py-3 ease-in-out duration-300">

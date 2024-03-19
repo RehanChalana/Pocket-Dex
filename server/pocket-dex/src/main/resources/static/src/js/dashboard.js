@@ -1,3 +1,8 @@
+// sidebar adjustment
+const dashboardBtn = document.querySelector(".Dashboard");
+dashboardBtn.classList.remove("font-semibold");
+dashboardBtn.classList.add("sidebar-hover","text-gray-800","font-bold");
+
 // declaring consts
 const budget80Toast = document.querySelector(".main-toast-budget-limit-cont");
 const transSuccessToast = document.querySelector(".main-toast-trans-success-cont");
