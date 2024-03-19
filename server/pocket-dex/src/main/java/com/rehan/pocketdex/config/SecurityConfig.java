@@ -29,6 +29,8 @@ public class SecurityConfig {
             auth.requestMatchers("/src/js/**").permitAll();
             auth.requestMatchers("/src/js/vendor/jquery/**").permitAll();
             auth.requestMatchers("/src/output.css").permitAll();
+            auth.requestMatchers("/src/about.html").permitAll();
+            auth.requestMatchers("/src/js/about.js").permitAll();
             auth.anyRequest().authenticated();
 //            auth.anyRequest().permitAll();
         }).formLogin(formLogin ->

@@ -23,3 +23,10 @@
 .main-history-container::-webkit-scrollbar {
     display: none;
   }
+
+  input::-webkit-calendar-picker-indicator {
+    filter: invert(1);
+    opacity: 1;
+    font-size: x-large;
+    margin-left: -2px;
+}

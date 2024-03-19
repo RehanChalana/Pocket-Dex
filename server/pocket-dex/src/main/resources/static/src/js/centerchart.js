@@ -91,16 +91,6 @@ let mainChart = new Chart(ctx, {
         }
       },
       plugins:{legend:{labels:{color:'rgb(209 213 219)'}}},
-
-      animations:{
-        tension: {
-          duration: 1000,
-          easing: 'linear',
-          from: 1,
-          to: 0,
-          loop: true
-        }
-      } 
     }
   });
 

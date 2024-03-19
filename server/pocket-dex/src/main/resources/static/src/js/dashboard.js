@@ -48,7 +48,7 @@ async function getWallets() {
     });
 }
 
-
+const userGreet = document.querySelector(".user-greet");
 
 
 getWallets().then(data => {
@@ -61,6 +61,7 @@ getWallets().then(data => {
     budgetContainer.innerHTML = `Rs ${budget}`;
     balanceContainer.innerHTML = `Rs ${balance}`;
     expenseContainer.innerHTML = `Rs ${budget - balance}`;
+    userGreet.innerHTML = `Hello , ${data[0].username}`;
 })
 
 

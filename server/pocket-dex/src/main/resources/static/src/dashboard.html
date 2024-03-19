@@ -19,7 +19,7 @@
     <div class="sidebar w-56 h-full flex flex-col fixed justify-between font-sans text-gray-300 text-base p-6">
         <div class="sidebar-top">
             <div class="s-top-logo"><div class="sidebar-header flex items-center gap-1 mb-8 rounded-full py-4 text-2xl font-semibold"><i class="fa-solid fa-prescription fa-lg"></i>Pocket-Dex</div></div>
-            <div class="home px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-house fa-lg"></i>Home</div>
+            <div class="home px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-house fa-lg"></i><a href="/src/about.html">Home</a></div>
             <div class="Dashboard px-2 py-2 mb-4 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-layer-group fa-lg"></i> <a href="/src/dashboard.html">Dashboard</a></div>
             <div class="wallet px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-wallet fa-lg"></i>Wallet</div>
             <div class="history px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-clock-rotate-left fa-lg"></i> <a href="/src/history.html">History</a></div>
@@ -27,7 +27,7 @@
         </div>
         <div class="sidebar-bottom border-t-2 py-4">
             <div class="settings px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-gear fa-lg"></i><a href="/src/settings.html">Settings</div>
-            <div class="logout px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i><a href="/login">logout</a></div>
+            <div class="logout px-2 mb-4 py-2 inline-flex items-center gap-2 font-semibold hover:text-gray-800 hover:font-bold ease-in-out duration-300"><i class="fa-solid fa-arrow-right-from-bracket fa-lg"></i><a href="/login">Logout</a></div>
         </div>
     </div>
 
@@ -105,11 +105,12 @@
                         </div>
 
                         <div class="budget-right-text flex flex-col justify-between py-2">
-                            <div class="budget-sort pr-6 text-sm">
-                                this month <i class="fa-solid fa-angle-down fa-sm"></i>
+                            <div class="budget-sort pr-6 text-md font-semibold">
+                                all time 
+                                <!-- <i class="fa-solid fa-angle-down fa-sm"></i> -->
                             </div>
                             <div class="budget-growth text-gray-800 font-medium mb-3 ml-3">
-                                <i class="fa-solid fa-arrow-up-right-dots fa-sm"></i> 4.5%
+                                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i> 
                             </div>
                         </div>
                        
@@ -126,11 +127,12 @@
                         </div>
 
                         <div class="balance-right-text flex flex-col justify-between py-2">
-                            <div class="balance-sort pr-4 text-sm">
-                                this month <i class="fa-solid fa-angle-down fa-sm"></i>
+                            <div class="balance-sort pr-6 text-md font-semibold">
+                                all time
+                                <!-- <i class="fa-solid fa-angle-down fa-sm"></i> -->
                             </div>
-                            <div class="balance-growth  text-gray-800 font-medium mb-3 ml-3">
-                                <i class="fa-solid fa-arrow-up-right-dots fa-sm"></i> 4.5%
+                            <div class="balance-growth  text-gray-800 font-medium mb-3 ml-3 mr-2">
+                                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i> 
                             </div>
                         </div>
                        
@@ -148,11 +150,12 @@
                         </div>
 
                         <div class="expense-right-text flex flex-col justify-between py-2">
-                            <div class="expense-sort text-sm pr-4">
-                                this month <i class="fa-solid fa-angle-down fa-sm"></i>
+                            <div class="expense-sort text-md font-semibold pr-6">
+                                all time 
+                                <!-- <i class="fa-solid fa-angle-down fa-sm"></i> -->
                             </div>
                             <div class="expense-growth text-gray-800 font-medium mb-3 ml-3">
-                                <i class="fa-solid fa-arrow-up-right-dots fa-sm"></i> 4.5%
+                                <i class="fa-solid fa-arrow-up-right-dots fa-2xl"></i> 
                             </div>
                         </div>
                         
@@ -167,7 +170,7 @@
                                 Total Expense
                             </div>
                             <div class="row2-header-right flex gap-6">
-                                <div class="row2-h-r-year text-lg text-zinc-500 font-semibold ease-in-out duration-300 cursor-pointer">year</div>
+                                <div class="row2-h-r-year text-lg text-zinc-500 font-semibold ease-in-out duration-300 cursor-pointer">Year</div>
                                 <div class="row2-h-r-month text-lg text-zinc-500 font-semibold ease-in-out duration-300 cursor-pointer">Month</div>
                                 <div class="row2-h-r-day text-lg text-gray-300 font-semibold ease-in-out duration-300 cursor-pointer">Week</div>
                             </div>
@@ -180,8 +183,8 @@
                 <div class="m-b-c-row3 flex ">
                     <div class="row3-history p-6 min-w-30 flex-1 w-0">
                         <div class="row3-h-header  mb-2 flex justify-between">
-                            <div class="row3-h-h-left text-xl text-gray-300 font-semibold">recent transactions</div>
-                            <div class="row3-h-h-right text-gray-300 text-sm mr-2 pt-2 font-semibold pr-4"> all time</div>
+                            <div class="row3-h-h-left text-xl text-gray-300 font-semibold">Recent Transactions</div>
+                            <div class="row3-h-h-right text-gray-300 text-md mr-2 pt-2 font-semibold pr-4"> all time</div>
                         </div>
                         <div class="row3-h-list flex-col">
                         </div>
@@ -190,7 +193,7 @@
                     <div class="row3-chart-container pt-6 px-6 flex-1 w-0">
                         <div class="row3-chart-header  mb-2 flex justify-between">
                             <div class="row3-c-h-left text-xl text-gray-300 font-semibold">Transaction Frequency</div>
-                            <div class="row3-c-h-right text-sm text-gray-400 font-semibold">
+                            <div class="row3-c-h-right text-md text-gray-400 font-semibold">
                                 <select class="row-3-chart-options">
                                     <option>weekly</option>
                                     <option>monthly</option>
@@ -223,7 +226,7 @@
 
                         <div class="m-b-r-t-f-date-container pt-1 border-b-2">
                             <div class="m-b-r-t-title-header pl-1 text-gray-400 font-semibold text-sm">Date</div>
-                            <input class="m-b-r-top-form-date text-white px-4 font-semibold text-md w-full border-0 placeholder:text-gray-300"type="date">
+                            <input class="m-b-r-top-form-date text-white pl-4 font-semibold text-md w-full border-0 placeholder:text-gray-300"type="date">
                         </div>
 
                         <div class="m-b-r-t-f-category-container pt-1 border-b-2">

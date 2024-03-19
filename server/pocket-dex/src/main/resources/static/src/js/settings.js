@@ -1,3 +1,9 @@
+const settingsBtn = document.querySelector(".settings");
+settingsBtn.classList.remove("font-semibold");
+settingsBtn.classList.add("sidebar-hover","text-gray-800","font-bold");
+
+
+
 async function getWallets() {
     return fetch("http://localhost:8080/getWallets")
     .then(response => {
